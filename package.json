@@ -1,0 +1,40 @@
+{
+  "name": "MainProject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path sass public/assets/scss/todo.css public/assets/css/todo.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^6.10.2",
+    "apidoc": "^0.17.7",
+    "bcrypt": "^3.0.6",
+    "chalk": "^2.4.2",
+    "documentation": "^12.0.3",
+    "dotenv": "^8.0.0",
+    "find-my-way": "^2.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "kuler": "^2.0.0",
+    "lokijs": "^1.5.6",
+    "node-sass": "^4.12.0",
+    "password-sheriff": "^1.1.0",
+    "pg": "^7.12.0",
+    "portscanner": "^2.2.0",
+    "raw-body": "^2.4.1",
+    "server-static": "^2.0.5",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
