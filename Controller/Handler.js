@@ -133,9 +133,7 @@ exports.checkAv = async (req, res) => {
           error(res, {message: "filter"})
         });
 
-      }).catch((err) => {
-      console.log(err)
-      error(res, err)
+      })
     })
   }
 }
