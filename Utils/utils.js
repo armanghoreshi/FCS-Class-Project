@@ -7,8 +7,7 @@ exports.checkip = async (req) => {
   return new Promise(function (resolve,reject) {
     let return_val
     const remoteAddr = req.headers['x-forwarded-for'] || req.connection.remoteAddress
-    //const ip = remoteAddr.substr(7)
-    const ip = '95.38.123.139'
+    const ip = remoteAddr.substr(7)
 
       https.get('https://api.ipgeolocation.io/ipgeo?apiKey=621e5379544f4648ae914b5a08aba858&ip=' + ip, (resp) => {
       let data = ''
