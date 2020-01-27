@@ -2,7 +2,6 @@ const getRawBody = require('raw-body')
 const { ok, error } = require('../Utils/response')
 const { checkip } = require('../Utils/utils.js')
 
-const schema = require('../Schema/schema')
 const url = require('url')
 const querystring = require('querystring')
 const https = require('https')
