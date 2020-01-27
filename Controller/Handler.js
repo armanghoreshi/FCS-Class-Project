@@ -134,6 +134,9 @@ exports.checkAv = async (req, res) => {
         });
 
       })
+  }else {
+    IranFlag = false
+    error(res, {message:"Access Denied !"})
   }
 }
 // =========== Q5 =============
