@@ -133,7 +133,7 @@ exports.checkAv = async (req, res) => {
           error(res, {message: "filter"})
         });
 
-      })
+      });
     })
   }
 }
