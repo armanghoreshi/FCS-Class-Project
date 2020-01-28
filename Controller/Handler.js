@@ -20,8 +20,6 @@ exports.openSSH = (req, res) => {
   fs.writeFile('./Controller/temp.txt', "sshd: "+ip, function (err) {
     if (err) {
       error(res, {message: "failed to log"})
-    } else {
-      ok(res, {message: "logged"})
     }
   })
   exec('cat /etc/hosts.allow ./Controller/temp.txt > ./Controller/temp2.txt', (err, stdout, stderr) => {
