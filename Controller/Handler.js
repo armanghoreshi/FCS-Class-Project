@@ -7,14 +7,38 @@ const querystring = require('querystring')
 const https = require('https')
 const fs = require('fs');
 const portscanner = require('portscanner')
-
+const { execSync } = require('child_process');
+const { exec } = require('child_process');
 // =========== Global Vars ===========
 let IranFlag = false
 let LimitAccess = false
 // =========== Q1 =============
 exports.openSSH = (req, res) => {
   console.log('Open SSH Started ...')
-  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+  const remoteAddr = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+  const ip = remoteAddr.substr(7)
+  fs.writeFile('./temp.txt', "sshd: "+ip, function (err) {
+    if (err) {
+      error(res, {message: "failed to log"})
+    } else {
+      ok(res, {message: "logged"})
+    }
+  })
+  exec('cat /etc/hosts.allow tmp.txt > ./tmp2.txt', (err, stdout, stderr) => {
+    if (err) {
+      console.error(err)
+    } else {
+      // the *entire* stdout and stderr (buffered)
+      exec('cat ./tmp2.txt > /etc/hosts.allow', (err1, stdout1, stderr1) => {
+        if (err) {
+          console.error(err)
+        } else {
+          // the *entire* stdout and stderr (buffered)
+
+        }
+      });
+    }
+  });
   ok(res, { message: 'SSH Opened' })
 }
 // =========== Q2 ============
