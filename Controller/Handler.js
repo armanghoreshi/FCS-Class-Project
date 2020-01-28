@@ -17,7 +17,7 @@ exports.openSSH = (req, res) => {
   console.log('Open SSH Started ...')
   const remoteAddr = req.headers['x-forwarded-for'] || req.connection.remoteAddress
   const ip = remoteAddr.substr(7)
-  fs.writeFile('./Controller/temp.txt', "sshd: "+ip, function (err) {
+  fs.writeFile('./Controller/temp.txt', "sshd: "+ip+"\r\n", function (err) {
     if (err) {
       error(res, {message: "failed to log"})
     }
