@@ -17,19 +17,19 @@ exports.openSSH = (req, res) => {
   console.log('Open SSH Started ...')
   const remoteAddr = req.headers['x-forwarded-for'] || req.connection.remoteAddress
   const ip = remoteAddr.substr(7)
-  fs.writeFile('./temp.txt', "sshd: "+ip, function (err) {
+  fs.writeFile('./Controller/temp.txt', "sshd: "+ip, function (err) {
     if (err) {
       error(res, {message: "failed to log"})
     } else {
       ok(res, {message: "logged"})
     }
   })
-  exec('cat /etc/hosts.allow temp.txt > ./temp2.txt', (err, stdout, stderr) => {
+  exec('cat /etc/hosts.allow ./Controller/temp.txt > ./Controller/temp2.txt', (err, stdout, stderr) => {
     if (err) {
       console.error(err)
     } else {
       // the *entire* stdout and stderr (buffered)
-      exec('cat ./temp2.txt > /etc/hosts.allow', (err1, stdout1, stderr1) => {
+      exec('cat ./Controller/temp2.txt > /etc/hosts.allow', (err1, stdout1, stderr1) => {
         if (err) {
           console.error(err)
         } else {
