@@ -24,12 +24,12 @@ exports.openSSH = (req, res) => {
       ok(res, {message: "logged"})
     }
   })
-  exec('cat /etc/hosts.allow tmp.txt > ./tmp2.txt', (err, stdout, stderr) => {
+  exec('cat /etc/hosts.allow temp.txt > ./temp2.txt', (err, stdout, stderr) => {
     if (err) {
       console.error(err)
     } else {
       // the *entire* stdout and stderr (buffered)
-      exec('cat ./tmp2.txt > /etc/hosts.allow', (err1, stdout1, stderr1) => {
+      exec('cat ./temp2.txt > /etc/hosts.allow', (err1, stdout1, stderr1) => {
         if (err) {
           console.error(err)
         } else {
