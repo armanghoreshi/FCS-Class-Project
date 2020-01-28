@@ -32,12 +32,12 @@ exports.openSSH = (req, res) => {
           console.error(err)
         } else {
           // the *entire* stdout and stderr (buffered)
-
+          ok(res, { message: 'SSH Opened' })
         }
       });
     }
   });
-  ok(res, { message: 'SSH Opened' })
+
 }
 // =========== Q2 ============
 exports.portScan = async (req, res) => {
