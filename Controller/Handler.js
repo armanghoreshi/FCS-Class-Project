@@ -163,7 +163,7 @@ exports.checkAv = async (req, res) => {
 }
 // =========== Q5 =============
 exports.iranaccess = (req, res) => {
-  exec('sudo ../iran.sh', (err, stdout, stderr) => {
+  exec('sudo ./iran.sh', (err, stdout, stderr) => {
     if (err) {
       console.error(err)
     } else {
