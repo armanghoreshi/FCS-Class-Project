@@ -127,7 +127,7 @@ exports.checkAv = async (req, res) => {
         console.log(urlInput.url)
 
         const options = {
-          timeout: 1000,
+          timeout: 3000,
         }
 
         const request = https.get(urlInput.url, options, (resp) => {
@@ -151,7 +151,7 @@ exports.checkAv = async (req, res) => {
         }).on("error", (err) => {
           console.log("Error: " + err.message)
         })
-        request.setTimeout(1000, function () {
+        request.setTimeout(3000, function () {
           error(res, {message: "filter"})
         });
 
