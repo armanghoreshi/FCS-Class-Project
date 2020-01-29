@@ -127,7 +127,7 @@ exports.checkAv = async (req, res) => {
         console.log(urlInput.url)
 
         const options = {
-          timeout: 100,
+          timeout: 1000,
         }
 
         const request = https.get(urlInput.url, options, (resp) => {
