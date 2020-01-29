@@ -163,8 +163,15 @@ exports.checkAv = async (req, res) => {
 }
 // =========== Q5 =============
 exports.iranaccess = (req, res) => {
-  LimitAccess = true
-  ok(res, {message:"access limited"})
+  exec('sudo iran.sh', (err, stdout, stderr) => {
+    if (err) {
+      console.error(err)
+    } else {
+      // the *entire* stdout and stderr (buffered)
+      LimitAccess = true
+      ok(res, { message: 'access limited' })
+    }
+  })
 }
 
 
