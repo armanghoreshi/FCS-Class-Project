@@ -1,4 +1,3 @@
-# FSC
-Fundamentals of secure computing
+# fundamentals of Secure Computing
 
-Small project of fundamentals of secure computing class at Ferdowsi University. This program validates ssl certificates of given websites.
+Project for fundamentals of secure computing class at Ferdowsi University. This program validates ssl certificates for a given website.
