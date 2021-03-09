@@ -1,4 +1,4 @@
-# fundamentals of Secure Computing
+# Fundamentals of Secure Computing
 
 Project for fundamentals of secure computing class at Ferdowsi University. 
 
